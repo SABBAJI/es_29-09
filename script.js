@@ -9,13 +9,13 @@ function aggiungiPersona() {
     let country = document.getElementById("country").value;
     let province = document.getElementById("province").value;
 
-    // Ensure all fields are filled
+  
     if (!name || !surname || !email || !birthdate || !phone || !country || !province) {
         alert("Compila tutti i campi!");
         return;
     }
 
-    // Create person object
+   
     let person = {
         name,
         surname,
@@ -26,21 +26,21 @@ function aggiungiPersona() {
         province
     };
 
-    // Add to the array
+  
     people.push(person);
 
-    // Update the table
+    
     aggiornaTabella();
 
-    // Reset form fields
+   
     document.getElementById("personForm").reset();
 }
 
 function aggiornaTabella() {
     let tableBody = document.querySelector("#personTable tbody");
-    tableBody.innerHTML = ""; // Clear the table before updating
+    tableBody.innerHTML = ""; 
 
-    // Loop over the array and generate rows
+    
     people.forEach((person, index) => {
         let row = `<tr>
             <td>${person.name}</td>
@@ -57,8 +57,8 @@ function aggiornaTabella() {
 }
 
 function rimuoviPersona(index) {
-    // Remove person from the array
+    
     people.splice(index, 1);
-    // Update the table
+    
     aggiornaTabella();
 }
